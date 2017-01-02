@@ -1,0 +1,11 @@
+{
+	"PORT": 8080,
+
+	"CRYPTO_PASS": "lkajshda",
+
+	"POSTGRE_HOST": "localhost",
+	"POSTGRE_PORT": 5432,
+	"POSTGRE_USER": "postgres",
+	"POSTGRE_PASSWORD": "pass",
+	"POSTGRE_DATABASE": "proovitoo_kristian"
+}

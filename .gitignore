@@ -1,0 +1,24 @@
+# App
+config/default.json
+
+### Node ###
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Yarn Integrity file
+.yarn-integrity
+yarn.lock
+
+### Windows ###
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*

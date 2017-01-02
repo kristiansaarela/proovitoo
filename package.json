@@ -1,0 +1,25 @@
+{
+  "name": "proovitoo-myjar",
+  "version": "1.0.0",
+  "description": "MyJAR proovitöö, Kristian Saarela",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "lodash": "^4.17.3",
+    "nconf": "^0.8.4",
+    "pg-promise": "^5.5.0",
+    "phone": "^1.0.9"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "mocha --timeout 10000",
+    "start": "node server.js"
+  },
+  "author": "Kristian Saarela",
+  "license": "ISC"
+}

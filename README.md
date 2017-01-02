@@ -6,7 +6,7 @@
 * npm 3.10.9
 * PostgreSQL 9.6.1
 
-## Ubuntu
+## Ubuntu (16.04)
 
 Unpack zip and enter the folder.
 
@@ -37,7 +37,7 @@ Create database schema
 sudo -u postgres psql < schema.sql
 ```
 
-Create config file based on `config/example.json` and save it as `default.json`
+Create config file based on `config/example.json` and save it as `config/default.json`
 
 Generate self-signed certificate for HTTPS
 
@@ -99,7 +99,17 @@ pm2 startup ubuntu
 
 Payload must be object, key value based and must contain `email` and `phone` key-value pairs.
 
-Returns HTTP status 201 and location on success, JSON data and status code 400 on error.
+```json
+{
+	"name": "jason born",
+	"email": "iwasbornjason@example.com",
+	"phone": "77 1234 5678",
+	"age": 44,
+	"alive": true
+}
+```
+
+Returns HTTP status 201 and location header on success, JSON data and status code 400 on error.
 
 ## Get client data
 
@@ -109,19 +119,65 @@ Id parameter must be number.
 
 Returns HTTP status 200 and client data as JSON on success, status code 404 if client is not found.
 
+```json
+{
+	"name": "jason born",
+	"email": "iwasbornjason@example.com",
+	"phone": "*********5678",
+	"age": 44,
+	"alive": "true"
+}
+```
+
 ## Get all clients data
 
 `GET /client/`
 
 Returns JSON object with client ids as keys and client data as values.
 
-## Find client
+```json
+{
+	"1": {
+		"email": "kris@hallaine.net",
+		"phone": "*********2852",
+		"tere": "piim",
+		"alma": 123
+	},
+	"2": {
+		"email": "kris@hallaine.net",
+		"phone": "*********2852",
+		"tere": "piim",
+		"alma": 123
+	},
+	"3": {
+		"email": "kris@hallaine.net",
+		"phone": "*********2852",
+		"tere": "piim",
+		"alma": 123,
+		"textas": "{1,2,0}"
+	}
+}
+```
 
-``GET /client/<key>=<value>`
+## Find clients
+
+`GET /client/?<key>=<value>`
 
 Key and value must both be strings. Only supports searching by 1 pair.
 
 Returns HTTP status 200 and clients matching search data.
+
+```json
+{
+	"184": {
+		"name": "jason born",
+		"email": "iwasbornjason@example.com",
+		"phone": "*********5678",
+		"age": 44,
+		"alive": "true"
+	}
+}
+```
 
 # Author
 

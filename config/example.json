@@ -1,5 +1,5 @@
 {
-	"PORT": 443,
+	"PORT": 8080,
 
 	"CRYPTO_PASS": "lkajshda",
 

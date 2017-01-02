@@ -42,7 +42,7 @@ Create config file based on `config/example.json` and save it as `config/default
 Generate self-signed certificate for HTTPS
 
 ```
-mkdir ssl && cd ssl
+cd ssl
 openssl genrsa -out key.pem
 openssl req -new -key key.pem -out csr.pem
 openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
@@ -58,13 +58,13 @@ npm install
 # Running
 
 ```
-npm start
+sudo npm start
 ```
 
 Run tests
 
 ```
-npm test
+sudo npm test
 ```
 
 ## PM2 & start up (optional)
@@ -78,7 +78,7 @@ sudo npm install -g pm2
 Run
 
 ```
-pm2 start process.js
+pm2 start process.json
 ```
 
 ### Create start up script

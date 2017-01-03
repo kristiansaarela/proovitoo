@@ -57,14 +57,16 @@ npm install
 
 # Running
 
+(When running from port 443 sudo is required)
+
 ```
-sudo npm start
+npm start
 ```
 
 Run tests
 
 ```
-sudo npm test
+npm test
 ```
 
 ## PM2 & start up (optional)

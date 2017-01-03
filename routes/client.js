@@ -7,11 +7,9 @@ const ClientModel = require('../models/client.js')
 
 router.use(bodyparser.json())
 
-// todo check if i send content type json
-
 const client = new ClientModel()
 
-// GET /clients + query string?
+// GET /clients/ + (?key=value)
 router.get('/', (req, res, next) => {
 	if (Object.keys(req.query).length) {
 		if (Object.keys(req.query).length > 1) {
@@ -25,9 +23,8 @@ router.get('/', (req, res, next) => {
 			res.status(200)
 			res.send(items)
 		}).catch((error) => {
-			// log
-			console.log(error)
 			res.sendStatus(500)
+			console.error(error)
 		})
 
 	} else {
@@ -35,9 +32,8 @@ router.get('/', (req, res, next) => {
 			res.status(200)
 			res.send(items)
 		}).catch((error) => {
-			// log
-			console.error(error)
 			res.sendStatus(500)
+			console.error(error)
 		})
 	}
 })
@@ -72,8 +68,8 @@ router.post('/', (req, res) => {
 		res.location('/client/' + id)
 		res.sendStatus(201)
 	}).catch((error) => {
-		// todo log
 		res.sendStatus(500)
+		console.error(error)
 	})
 })
 
@@ -96,9 +92,7 @@ router.get('/:id', (req, res, next) => {
 		res.send(result)
 	}).catch((error) => {
 		res.sendStatus(500)
-
-		// todo: log
-		//next(error, req, res, next)
+		console.error(error)
 	})
 })
 
